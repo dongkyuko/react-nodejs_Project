@@ -1,0 +1,19 @@
+type Verification {
+    id: Int!
+    target: String!
+    payload: String!
+    key: String!
+    used: Boolean!
+    user: User!
+    createdAt: String!
+    updatedAt: String
+}
+
+# type Query {
+#     verification: Verification
+# }
+
+# v =Verification
+# v.target = phone
+# v.payload = +dsadasd;lasdkal;sdksa;ldkasl;
+# v.key = 3456

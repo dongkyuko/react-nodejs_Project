@@ -6,6 +6,7 @@
   "author": "ADMIN-PC\\ADMIN <blackdark880523@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
     "@types/cors": "^2.8.4",
     "@types/helmet": "^0.0.42",
     "@types/morgan": "^1.7.35",
@@ -19,11 +20,14 @@
     "typescript": "^3.1.3"
   },
   "scripts": {
+    "predev": "yarn run types",
     "dev": "cd src && nodemon --exec ts-node index.ts -e ts,graphql",
     "pretypes": "gql-merge --out-file ./src/schema.graphql ./src/api/**/*.graphql",
     "types": "graphql-to-typescript ./src/schema.graphql ./src/types/graph.d.ts"
   },
   "dependencies": {
+    "bcrypt": "^3.0.2",
+    "class-validator": "^0.9.1",
     "cors": "^2.8.4",
     "dotenv": "^6.1.0",
     "graphql": "^14.0.2",
