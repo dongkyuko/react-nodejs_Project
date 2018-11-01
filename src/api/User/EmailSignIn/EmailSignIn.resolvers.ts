@@ -4,6 +4,7 @@ import {
     EmailSignInResponse
 } from "../../../types/graph";
 import { Resolvers } from "../../../types/resolvers";
+import createJWT from "../../../utils/createJWT";
 
 const resolvers: Resolvers = {
     Mutation: {
@@ -25,12 +26,14 @@ const resolvers: Resolvers = {
 
                 //비밀번호 체크
                 const checkPassword = await user.comparePassword(password);
+                const token = createJWT(user.id);
+            
                 //비밀번호가 맞았을 때
                 if (checkPassword) {
                     return {
                         ok: true,
                         error: null,
-                        token: "Coming Soon, Email Sign In"
+                        token
                     }
                 } 
                 //비밀번호가 틀렸을 때

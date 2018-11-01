@@ -24,7 +24,6 @@ const resolvers: Resolvers = {
                     target: "PHONE"
                 }).save();
                 //인증번호 보내기
-                console.log(newVerification);
                 await sendVerificationSMS(newVerification.payload, newVerification.key);
                 return {
                     ok: true,

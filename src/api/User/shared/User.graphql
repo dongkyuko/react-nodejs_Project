@@ -9,7 +9,7 @@ type User {
     phoneNumber: String
     verifiedPhoneNumber: Boolean!
     profilePhoto: String
-    fullNamme: String
+    fullname: String
     isDriving: Boolean!
     isRiding: Boolean!
     isTaken: Boolean!
@@ -23,8 +23,4 @@ type User {
     ridesAsDriver: [Ride]
     createdAt: String!
     updatedAt: String
-}
-
-type Query {
-    user: User
 }
