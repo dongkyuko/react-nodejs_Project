@@ -28,7 +28,7 @@ Server - Graphql, TypeScript, NodeJS
     - [x] Get my Profile
     - [x] Request Email Verification
     - [x] Complete Email Verification
-    - [x] Update my Profile
+    - [x] Update User Profile
     - [ ] Toggle Driving Mode
     - [ ] Report Location / Orientation
     - [ ] Add Place
