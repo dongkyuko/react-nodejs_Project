@@ -3,7 +3,7 @@ import { IsEmail } from "class-validator";
 import { 
     BaseEntity, 
     BeforeInsert, 
-    // BeforeUpdate,
+    BeforeUpdate,
     Column,  
     CreateDateColumn, 
     Entity, 
@@ -100,16 +100,13 @@ class User extends BaseEntity {
     };
 
     //비밀번호 체크
-    public comparePassword(password: string): Promise<boolean>{
-        console.log(password);
-        console.log(this.password);
-    
+    public comparePassword(password: string): Promise<boolean>{    
         return bcrypt.compare(password, this.password);
     };
      
     //비밀번호 암호화 //Promise에 대해 깊게 알기
     @BeforeInsert()
-    //@BeforeUpdate()
+    @BeforeUpdate()
     async savePassword() : Promise<void> {
         if(this.password){
             const hashedPassword = await this.hashPassword(this.password);

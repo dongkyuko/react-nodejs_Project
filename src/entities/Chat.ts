@@ -27,7 +27,6 @@ import {
 
     @UpdateDateColumn()
     updatedAt: string;
-
   }
 
   export default Chat;

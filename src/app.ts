@@ -36,7 +36,7 @@ class App {
         const token = req.get("X-JWT");
         if (token) {
             const user = await decodeJWT(token);
-            //Request user에 user 정보 확인
+            //Request user에 user 정보 넣기
             if(user) {
                 req.user = user;
             } else {
