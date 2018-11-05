@@ -17,6 +17,7 @@ import {
 import Chat from "./Chat";
 import Message from "./Message";
 import Ride from "./Ride";
+import Place from "./Place";
 
 //Salt 숫자
 const BCRYPT_ROUNDS = 10;
@@ -88,6 +89,9 @@ class User extends BaseEntity {
     @OneToMany(type => Ride, ride => ride.driver)
     ridesAsDriver: Ride[];
 
+    @OneToMany(type => Place, place => place.user)
+    places: Place[];
+
     @CreateDateColumn()
     createdAt: string;
 
@@ -134,7 +138,7 @@ export default User;
 //     phoneNumber: String
 //     verifiedPhoneNumber: Boolean!
 //     profilePhoto: String
-//     fullNamme: String
+//     fullname: String
 //     isDriving: Boolean!
 //     isRiding: Boolean!
 //     isTaken: Boolean!
@@ -144,9 +148,9 @@ export default User;
 //     fbId: String
 //     chat: Chat
 //     messages: [Message]
-//     verifications: [Verification]
 //     ridesAsPassenger: [Ride]
 //     ridesAsDriver: [Ride]
+//     places: [Place]
 //     createdAt: String!
 //     updatedAt: String
 // }

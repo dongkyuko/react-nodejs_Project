@@ -3,9 +3,13 @@ import {
     Column,
     CreateDateColumn,
     Entity,
+    ManyToOne,
     PrimaryGeneratedColumn,
     UpdateDateColumn
   } from "typeorm";
+
+  //관계가 있는 모델 무르기
+  import User from "./User";
 
 @Entity()
 class Place extends BaseEntity {
@@ -28,6 +32,12 @@ class Place extends BaseEntity {
     @Column({type:"boolean", default:false})
     isFav: boolean;
 
+    @Column({nullable: true})
+    userId: number;
+
+    @ManyToOne(type => User, user => user.places)
+    user: User;
+
     @CreateDateColumn()
     createdAt: string;
 
@@ -45,6 +55,7 @@ export default Place;
 //     lng: Float!
 //     address: String!
 //     isFav: Boolean!
+//     user: User!
 //     createdAt: String!
 //     updatedAt: String
 // }
