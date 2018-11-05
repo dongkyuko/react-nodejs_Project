@@ -8,5 +8,5 @@ type Mutation {
         placeId: Int!,
         name: String,
         isFav: Boolean
-    ):EditPlaceResponse
+    ):EditPlaceResponse!
 }

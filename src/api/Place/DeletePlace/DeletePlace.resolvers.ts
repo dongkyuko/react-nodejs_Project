@@ -33,7 +33,7 @@ const resolvers: Resolvers = {
                             return {
                                 ok: false,
                                 error: null
-                            }
+                            };
                         }
                     }
                     //Place가 없다면

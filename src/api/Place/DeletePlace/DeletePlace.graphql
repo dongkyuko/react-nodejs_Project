@@ -6,5 +6,5 @@ type DeletePlaceResponse {
 type Mutation {
     DeletePlace(
         placeId: Int!
-    ): DeletePlaceResponse
+    ): DeletePlaceResponse!
 }
