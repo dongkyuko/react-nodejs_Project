@@ -7,7 +7,7 @@ import {
 import { Resolvers } from "../../../types/resolvers";
 import privateResolver from "../../../utils/privateResolvers";
 
-const resolver: Resolvers = {
+const resolvers: Resolvers = {
     Mutation: {
         AddPlace: privateResolver(
             async(
@@ -35,4 +35,4 @@ const resolver: Resolvers = {
     }
 };
 
-export default resolver;
+export default resolvers;

@@ -29,7 +29,7 @@ const resolvers: Resolvers = {
                             await Place.update({id: args.placeId}, {...notNull});
                             return {
                                 ok: true,
-                                error: "Not Authorized"
+                                error: null
                             };
                         } 
                         // PLace 정보의 유저 ID와 현재 로그인한 유저 ID가 다르다면
