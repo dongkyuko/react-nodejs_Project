@@ -3,7 +3,9 @@ import {
     Column,
     CreateDateColumn,
     Entity,
+    JoinColumn,
     ManyToOne,
+    OneToOne,
     PrimaryGeneratedColumn,
     UpdateDateColumn
   } from "typeorm";
@@ -13,6 +15,7 @@ import { rideStatus } from "../types/types";
 
 //DB 관계를 위해 엔티티 불러오기
 import User from "./User";
+import Chat from "./Chat";
 
 @Entity()
 class Ride extends BaseEntity {
@@ -23,8 +26,9 @@ class Ride extends BaseEntity {
   //사용자 정의 타입 부르기
   @Column({
     type:"text", 
-    enum: ["ACCEPTED", "FINISHED", "CANCELED", "REQUESTING", "ONROUTE"]
-})
+    enum: ["ACCEPTED", "FINISHED", "CANCELED", "REQUESTING", "ONROUTE"], 
+    default:"REQUESTING"
+  })
   status:rideStatus;
 
   @Column({type:"text"})
@@ -54,11 +58,24 @@ class Ride extends BaseEntity {
   @Column({type:"text"})
   duration:string;
 
-  @ManyToOne(type => User, user => user.ridesAsDriver)
-  driver: User;
+  @Column({nullable:true})
+  passengerId: number;
 
   @ManyToOne(type => User, user => user.ridesAsPassenger)
   passenger: User;
+
+  @Column({nullable: true})
+  driverId: number;
+
+  @ManyToOne(type => User, user => user.ridesAsDriver, {nullable:true})
+  driver: User;
+
+  @Column({nullable:true})
+  chatId: number;
+
+  @OneToOne(type => Chat, chat => chat.ride, {nullable:true})
+  @JoinColumn()
+  chat: Chat;
   
   @CreateDateColumn()
   createdAt:string;

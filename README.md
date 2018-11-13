@@ -37,13 +37,16 @@ Server - Graphql, TypeScript, NodeJS
     - [x] Get My Places
     - [x] See Nearby Drivers
     - [x] Subscribe to Nearby Drivers
-    - [ ] Request a Ride
-    - [ ] Get Nearby Ride Requests
-    - [ ] Subscribe to Nearby Ride Requests
-    - [ ] Subscribe to Ride Status
-    - [ ] Get Chat Room Messages
-    - [ ] Subscribe to Chat Room Messages
-    - [ ] Send a Chat Messages
+    - [x] Request a Ride
+    - [x] Get Nearby Ride Requests
+    - [x] Subscribe to Nearby Ride Requests
+    - [x] Update Ride Status
+    - [x] Get Ride 
+    - [x] Subscribe to Ride Status
+    - [x] Create a Chat Room
+    - [x] Get Chat Room Messages
+    - [x] Send a Chat Messages
+    - [x Subscribe to Chat Room Messages
 
 ## Code Challenge
 
