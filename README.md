@@ -46,7 +46,7 @@ Server - Graphql, TypeScript, NodeJS
     - [x] Create a Chat Room
     - [x] Get Chat Room Messages
     - [x] Send a Chat Messages
-    - [x Subscribe to Chat Room Messages
+    - [x] Subscribe to Chat Room Messages
 
 ## Code Challenge
 
