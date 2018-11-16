@@ -16,7 +16,7 @@ const resolvers: Resolvers = {
                         { id: req.user.id },
                         { relations: ["places"] }
                     );
-                    console.log(user);
+                    //console.log(user);
                     //유저가 있다면
                     if(user){
                         return {
