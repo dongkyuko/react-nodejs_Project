@@ -36,7 +36,7 @@ const resolvers: Resolvers = {
                     if(phoneVerification) {
                         const newUser = await User.create({ ...args }).save();
                         // 새로가입한 유저의 이메일이 있으면 이메일 인증번호 생성 후 사용자에 이메일 전송
-                        console.log(newUser.email);
+                        //console.log(newUser.email);
                         if(newUser.email) {
                             const emailVerification = await Verification.create({
                                 payload: newUser.email,
